@@ -1,8 +1,11 @@
 # Decimal to Binary Conversion
 # Author: Josiah Pang
+# File: dec2bin.py
 # Date: 2017-06-22
 # Description: This is a simple program that converts a decimal input
 #              into its binary number equivalent through division by 2
+
+import sys
 
 # a dec is a decimal number represented by an integer
 # a bin is a binary number represented by an integer
@@ -19,7 +22,13 @@ def convert(d):
     return int(binary[::-1])
 
 def main():
-    pass
+    try:
+        number = int(input('Decimal number: '))
+    except:
+        print('Please enter a valid integer value.')
+        sys.exit()
+    converted = convert(number)
+    print('Binary equivalent: {:d}'.format(converted))
 
 if __name__ == "__main__":
     main()
