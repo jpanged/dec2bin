@@ -15,11 +15,14 @@ import sys
 def convert(d):
     cur = d
     binary = ''
-    while cur != 0:
-        nxt = cur % 2 # Returns next binary place
-        cur = cur // 2 # Modifies input for next division
-        binary += str(nxt)
-    return int(binary[::-1])
+    if cur == 0:
+        return 0
+    else:
+        while cur != 0:
+            nxt = cur % 2 # Returns next binary place
+            cur = cur // 2 # Modifies input for next division
+            binary += str(nxt)
+        return int(binary[::-1])
 
 def main():
     try:
